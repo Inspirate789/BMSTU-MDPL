@@ -18,7 +18,7 @@ CSEG1 SEGMENT PARA PUBLIC 'CODE'
 	assume CS:CSEG1, DS:DSEG1, SS:SSEG
 main:
 	mov ax, DSEG1
-    mov ds, ax               ; записываем в регистр DS адрес начала сегмента DSEG1
+    	mov ds, ax               ; записываем в регистр DS адрес начала сегмента DSEG1
 	
 	mov dx, OFFSET InputMSG
 	mov AH, 09h
