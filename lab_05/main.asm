@@ -11,8 +11,8 @@ CSEG1 SEGMENT PARA PUBLIC 'CODE'
 	assume CS:CSEG1, SS:SSEG
 main:
 	call input_matrix
-    call replace_elems
-    call output_matrix
+    	call replace_elems
+    	call output_matrix
 
 	mov ax, 4c00h 			 		; завершение программы
 	int 21h
