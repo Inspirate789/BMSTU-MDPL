@@ -27,7 +27,7 @@ output_sign_hex proc far
     	mov ah, 02h
     	int 21h                                 ; выводим минус перед числом
 
-    	neg bx                                  ; перевели число из доп. кода в обычный
+    	neg bx                                  ; изменяем знак числа
 
     	skip_sign:
     	mov cl, 12
