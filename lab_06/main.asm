@@ -63,22 +63,22 @@ main:
 		jmp skip_error_message
 
 		write_error_message:
-			mov dx, OFFSET Endline
-			mov ah, 09h
-			int 21h
-			
-			mov dx, OFFSET OptionErrorMSG
-			int 21h								; выводим сообщение об ошибке
+		mov dx, OFFSET Endline
+		mov ah, 09h
+		int 21h
 
-			mov dx, OFFSET Endline
-			int 21h
+		mov dx, OFFSET OptionErrorMSG
+		int 21h									; выводим сообщение об ошибке
+
+		mov dx, OFFSET Endline
+		int 21h
 		
 		skip_error_message:
-			mov dx, OFFSET Endline
-			mov ah, 09h
-			int 21h
+		mov dx, OFFSET Endline
+		mov ah, 09h
+		int 21h
 
-			jmp menu_loop							; запускаем бесконечный цикл работы с меню ; заершение только при вызове процедуры exit
+		jmp menu_loop								; запускаем бесконечный цикл работы с меню ; заершение только при вызове процедуры exit
 	
 CSEG1 ENDS
 END main
