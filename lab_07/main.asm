@@ -51,7 +51,7 @@ skip_speed_change:
     pop dx
     pop cx
     pop ax
-    jmp dword ptr cs:handler_addr
+    jmp dword ptr cs:handler_addr                           ; вызываем старый обработчик прерывния таймера
 inc_input_speed endp
 
 init:
@@ -90,7 +90,7 @@ exit:
     mov dx, word ptr es:handler_addr                       
     mov ds, word ptr es:handler_addr[2]
     mov ax, 251ch
-    int 21h
+    int 21h                                                 ; восстанавливаем старый обработчик прерывания таймера в таблице векторов прерываний
 
     mov ah, 49h                                             ; Надо ли вычищать память из-под резидента? И работает ли это корректно?
     int 21h
