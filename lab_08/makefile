@@ -1,7 +1,7 @@
 # Простой makefile для сборки, запуска и просмотра проассемблированного кода программы
 # Написан под Linux
 # Код написан под соглашение о вызове elf64 (Executable and Linkable Format), предназначенное для UNIX-подобных операционных систем
-# Установка ассемблера nasm для Arch/MSYS2(MinGW): "$ sudo pacman -S nasm"
+# Установка ассемблера nasm для Arch: "$ sudo pacman -S nasm"
 # При компиляции mystrlen.cpp использую опцию "-masm=intel", чтобы скомпилировалась ассемблерная вставка, написанная не на нативном, а на синтаксисе Intel
 
 test.exe: main.cpp mystrlen.cpp mystrlen.h mystrncpy.asm
