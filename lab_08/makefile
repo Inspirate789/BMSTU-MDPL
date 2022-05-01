@@ -16,7 +16,7 @@ run: test.exe
 	./test.exe
 
 assembly:
-	gcc -S mystrlen.cpp -o mystrlen.s
+	g++ -S mystrlen.cpp -o mystrlen.s
 	cat mystrlen.s
 
 clean:
