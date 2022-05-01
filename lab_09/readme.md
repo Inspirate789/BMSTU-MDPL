@@ -11,5 +11,5 @@
 - [Подпобно об инструкциях FPU x87](https://wasm.in/threads/kodirovanie-fpu-instrukcij-intel-x87.34392/)
 - [Краткий справочник по командам архитектуры x86](http://www.ccfit.nsu.ru/~kireev/lab2/lab2com.htm)
 - [GCC x86 options](https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html)
-- [Об ограничителях операндов (в обозначаниях входных и выходных параметров в конце каждой ассемблерной вставки)](http://av-assembler.ru/asm/high-level-languages/assembler-gcc.php#:~:text=6.%20%D0%9F%D0%9E%D0%94%D0%A0%D0%9E%D0%91%D0%9D%D0%95%D0%95%20%D0%9E%D0%91%20%D0%9E%D0%93%D0%A0%D0%90%D0%9D%D0%98%D0%A7%D0%98%D0%A2%D0%95%D0%9B%D0%AF%D0%A5)
+- [Об ограничителях операндов (в обозначениях входных и выходных параметров в конце каждой ассемблерной вставки)](http://av-assembler.ru/asm/high-level-languages/assembler-gcc.php#:~:text=6.%20%D0%9F%D0%9E%D0%94%D0%A0%D0%9E%D0%91%D0%9D%D0%95%D0%95%20%D0%9E%D0%91%20%D0%9E%D0%93%D0%A0%D0%90%D0%9D%D0%98%D0%A7%D0%98%D0%A2%D0%95%D0%9B%D0%AF%D0%A5)
 - [Оптимизация кода GCC SSE](https://qa.ostack.cn/qa/?qa=784641/)
