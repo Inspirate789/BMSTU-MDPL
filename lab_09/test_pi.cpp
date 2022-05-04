@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
 
-#define PRECISION "%.12f"
+#define PRECISION "%.20f"
 
 double sin_pi()                             // обёртка над ассемблерной вставкой, считающей sin(pi)
 {
