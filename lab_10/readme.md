@@ -17,3 +17,4 @@
 - [Неплохие описания команд на русском](https://www.club155.ru/x86cmdsimd)
 - [Подробные описания команд с расшифровкой](https://www.felixcloutier.com/x86/)
 - [Чуть менее подробные, но более наглядные описания команд](https://c9x.me/x86/)
+- [Про "горизонтальную" (внутрирегистровую) сумму частей регистров SSE](https://community.intel.com/t5/Intel-ISA-Extensions/Intraregister-sum/m-p/808872) - спасибо [Серёге](https://github.com/seregadanser) за ссылку
