@@ -20,20 +20,33 @@ float sse_scalar_prod(float *src_a, float *src_b, size_t n)
     __float128 *b = (__float128 *)src_b;
 
     for (size_t i = 0; i < n; i += sizeof(__float128) / sizeof(float), a++, b++)
-    {                                   // Находим скалярное произведение четвёрок (sizeof(__float128) / sizeof(float) = 4) элементов векторов
-                                        //                                              xmm0                                                                                     xmm1
-        __asm__(                        //                                               -                                                                                        -
-            "movaps xmm0, %1\n"         //       |       x1       |       x2       |            x3           |            x4           |                                  -
-            "movaps xmm1, %2\n"         //       |       x1       |       x2       |            x3           |            x4           |            |   y1  |   y2  |      y3     |      y4     |
-            "mulps xmm0, xmm1\n"        //       |     x1*y1      |     x2*y2      |          x3*y3          |          x4*y4          |            |   y1  |   y2  |      y3     |      y4     |
-            "movhlps xmm1, xmm0\n"      //       |     x1*y1      |     x2*y2      |          x3*y3          |          x4*y4          |            |   y1  |   y2  |    x1*y1    |    x2*y2    |
-            "addps xmm0, xmm1\n"        //       |    x1*y1+y1    |    x2*y2+y2    |       x3*y3+x1*y1       |       x4*y4+x2*y2       |            |   y1  |   y2  |    x1*y1    |    x2*y2    |
-            "movaps xmm1, xmm0\n"       //       |    x1*y1+y1    |    x2*y2+y2    |       x3*y3+x1*y1       |       x4*y4+x2*y2       |            | x1*y1 | x2*y2 | x3*y3+x1*y1 | x4*y4+x2*y2 |
-            "shufps xmm0, xmm0, 1\n"    //       |    x1*y1+y1    |    x2*y2+y2    |       x3*y3+x1*y1       |       x3*y3+x1*y1       |            | x1*y1 | x2*y2 | x3*y3+x1*y1 | x4*y4+x2*y2 |
-            "addps xmm0, xmm1\n"        //       | x1*y1+y1+x1*y1 | x2*y2+y2+x2*y2 | x3*y3+x1*y1+x3*y3+x1*y1 | x3*y3+x1*y1+x4*y4+x2*y2 |            | x1*y1 | x2*y2 | x3*y3+x1*y1 | x4*y4+x2*y2 |
-            "movss %0, xmm0\n"          // Все действия после mulps (когда мы получили скалярное произведение 4-мерных векторов) мы сделали для того, чтобы получить в младших 32 битах xmm0 
-            : "=m"(tmp)                 // сумму всех 32-битных частей xmm0 из занести её в результат (32-битную переменную). 
-            : "m"(*a), "m"(*b)          // Да-да, тут используется именно такое преобразование типа: старшие 3/4 числа просто отбрасываются.
+{       // Находим скалярное произведение четвёрок (sizeof(__float128) / sizeof(float) = 4) элементов векторов
+        //                                                                                 xmm0                                                                                     xmm1
+        // __asm__(                        //                                               -                                                                                        -
+        //     "movaps xmm0, %1\n\t"       //       |       x1       |       x2       |            x3           |            x4           |                                  -
+        //     "movaps xmm1, %2\n\t"       //       |       x1       |       x2       |            x3           |            x4           |            |   y1  |   y2  |      y3     |      y4     |
+        //     "mulps xmm0, xmm1\n\t"      //       |     x1*y1      |     x2*y2      |          x3*y3          |          x4*y4          |            |   y1  |   y2  |      y3     |      y4     |
+        //     "movhlps xmm1, xmm0\n\t"    //       |     x1*y1      |     x2*y2      |          x3*y3          |          x4*y4          |            |   y1  |   y2  |    x1*y1    |    x2*y2    |
+        //     "addps xmm0, xmm1\n\t"      //       |    x1*y1+y1    |    x2*y2+y2    |       x3*y3+x1*y1       |       x4*y4+x2*y2       |            |   y1  |   y2  |    x1*y1    |    x2*y2    |
+        //     "movaps xmm1, xmm0\n\t"     //       |    x1*y1+y1    |    x2*y2+y2    |       x3*y3+x1*y1       |       x4*y4+x2*y2       |            | x1*y1 | x2*y2 | x3*y3+x1*y1 | x4*y4+x2*y2 |
+        //     "shufps xmm0, xmm0, 1\n\t"  //       |    x1*y1+y1    |    x2*y2+y2    |       x3*y3+x1*y1       |       x3*y3+x1*y1       |            | x1*y1 | x2*y2 | x3*y3+x1*y1 | x4*y4+x2*y2 |
+        //     "addps xmm0, xmm1\n\t"      //       | x1*y1+y1+x1*y1 | x2*y2+y2+x2*y2 | x3*y3+x1*y1+x3*y3+x1*y1 | x3*y3+x1*y1+x4*y4+x2*y2 |            | x1*y1 | x2*y2 | x3*y3+x1*y1 | x4*y4+x2*y2 |
+        //     "movss %0, xmm0\n\t"        // Все действия после mulps (когда мы получили скалярное произведение 4-мерных векторов) мы сделали для того, чтобы получить в младших 32 битах xmm0 
+        //     : "=m"(tmp)                 // сумму всех 32-битных частей xmm0 из занести её в результат (32-битную переменную). 
+        //     : "m"(*a), "m"(*b)          // Да-да, тут используется именно такое преобразование типа: старшие 3/4 числа просто отбрасываются.
+        //     : "xmm0", "xmm1"
+        //     );
+        
+        // А теперь то же самое, только с использованием команд SSE3. Суть та же, только запись проще, а выполнение медленнее.
+        __asm__(
+            "movaps xmm0, %1\n\t"
+            "movaps xmm1, %2\n\t"
+            "mulps xmm0, xmm1\n\t"
+            "haddps xmm0, xmm0\n\t"
+            "haddps xmm0, xmm0\n\t"
+            "movss %0, xmm0\n\t"
+            : "=m"(tmp)
+            : "m"(*a), "m"(*b)
             : "xmm0", "xmm1"
             );
         
