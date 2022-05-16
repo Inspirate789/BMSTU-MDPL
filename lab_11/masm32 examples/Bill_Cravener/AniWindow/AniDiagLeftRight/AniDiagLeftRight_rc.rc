@@ -1,0 +1,21 @@
+#include "\masm32\include\resource.h"
+
+; #######################################################################
+
+MAINSCREEN DIALOG DISCARDABLE  29, 28, 374, 84
+STYLE DS_CENTER | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Using Windows AnimateWindow API"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        " Diagonal left to right animation when dialog is created ",
+                    IDC_STATIC,9,5,355,33,BS_CENTER | BS_FLAT
+    CTEXT           "invoke AnimateWindow, hWin, 500, AW_ACTIVATE or AW_HOR_POSITIVE or AW_VER_POSITIVE",
+                    IDC_STATIC,14,14,344,18,SS_CENTERIMAGE
+    GROUPBOX        " Diagonal left to right animation when dialog is closed ",
+                    IDC_STATIC,9,43,355,33,BS_CENTER | BS_FLAT
+    CTEXT           "invoke AnimateWindow, hWin, 500, AW_HIDE or AW_HOR_POSITIVE or AW_VER_POSITIVE",
+                    IDC_STATIC,14,53,344,18,SS_CENTERIMAGE
+END
+
+; #######################################################################
+

@@ -1,0 +1,38 @@
+#define VERSIONINFO_1	1
+
+600 MENU
+{
+ POPUP "&File"
+        {
+       MENUITEM "&Exit", 2000
+        }
+}
+
+200 ICON MOVEABLE PURE LOADONCALL DISCARDABLE "ICON1.ICO"
+750                BITMAP  DISCARDABLE     "temp.bmp"
+
+
+VERSIONINFO_1 VERSIONINFO 
+FILEVERSION 1, 0, 0, 0
+PRODUCTVERSION 1, 0, 0, 0
+{
+ BLOCK "StringFileInfo"
+ {
+  BLOCK "040904E4";=French et "040904E4"=English(USA)
+  {
+   VALUE "FileDescription", "Insertion d'un Bitmap dans un menu\000"
+   VALUE "FileVersion", "1.00\000\000"
+   VALUE "InternalName", "ecMenu\000"
+   VALUE "LegalCopyright", "NoCopyright © Vom-bonjour:-()\000\000"
+   VALUE "OriginalFilename", "ecMenu.exe\000"
+   VALUE "Vom-bonjour:-()", "Created by Vom-bonjour:-()\000"
+  }
+
+ }
+
+ BLOCK "VarFileInfo"
+ {
+  VALUE "Translation", 0x409,1200   ;(=4B0h)USA=0x409h, 1252d(=4E4h)
+ }
+
+}

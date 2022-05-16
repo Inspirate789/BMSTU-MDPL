@@ -1,0 +1,16 @@
+; #########################################################################
+; This settings file MUST maintain the EXACT line count. Edit each of the
+; 10 lines to the string or value you require then save the file. If this
+; file is damaged, delete it and start Prostart again, it will create a
+; new default file, then you can edit it again.
+; #########################################################################
+Project              ; project name
+Prostart Template    ; window title
+Prostart_Class       ; class name
+75                   ; window width %
+70                   ; window height %
+wc                   ; WNDCLASSEX name
+ 111 111 111         ; toolbar button layout
+24                   ; button width
+24                   ; button height
+4                    ; statusbar item count

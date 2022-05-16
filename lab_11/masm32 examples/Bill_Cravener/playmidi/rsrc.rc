@@ -1,0 +1,35 @@
+#include "\masm32\include\resource.h"
+
+;################################################################################
+
+#define  ID_LIST1 101
+
+#define  ID_BUTTON1 201
+#define  ID_BUTTON2 202
+#define  ID_BUTTON3 203
+
+#define  ID_SHOWPATH 1000
+
+; #######################################################################
+
+MAINSCREEN DIALOGEX 29, 28, 256, 180
+STYLE DS_MODALFRAME | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Fun with Multimedia"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         ID_LIST1,8,28,240,100,LBS_SORT | LBS_MULTICOLUMN | 
+                    WS_HSCROLL
+    PUSHBUTTON      "Play",ID_BUTTON1,128,152,36,20,BS_FLAT,
+                    WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "Stop",ID_BUTTON2,172,152,36,20,BS_FLAT,
+                    WS_EX_DLGMODALFRAME
+    DEFPUSHBUTTON   "Close",ID_BUTTON3,216,152,36,20,BS_FLAT,
+                    WS_EX_DLGMODALFRAME
+    LTEXT           "",ID_SHOWPATH,8,12,240,10,SS_SUNKEN
+    CTEXT           "Click on the sample midi file and click the play button.",
+                    -1,12,132,177,15,SS_CENTERIMAGE | WS_BORDER
+END
+
+; #######################################################################
+

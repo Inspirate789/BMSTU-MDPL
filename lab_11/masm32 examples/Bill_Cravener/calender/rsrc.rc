@@ -1,0 +1,39 @@
+#include "\masm32\include\resource.h"
+
+;################################################################################
+
+600 BITMAP DISCARDABLE "Goofy1.bmp"
+700 BITMAP DISCARDABLE "Goofy2.bmp"
+800 BITMAP DISCARDABLE "Goofy3.bmp"
+
+#define  ID_DATETIMEPICKER 100 
+#define  ID_CALENDAR 200
+#define  ID_BUTTON 300
+#define  ID_STATIC -1
+
+;################################################################################
+
+Calendar DIALOGEX 0, 0, 308, 214
+STYLE DS_MODALFRAME  | 0x0004 | DS_CENTER | WS_CAPTION | WS_SYSMENU | WS_VISIBLE | WS_POPUP
+CAPTION "Calendar and Date Picker controls plus other fun things"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Calendar control",ID_STATIC,6,25,296,136,BS_FLAT
+    CONTROL         "MonthCalendar",ID_CALENDAR,"SysMonthCal32",WS_TABSTOP,
+                    11,38,150,118,WS_EX_DLGMODALFRAME
+    LTEXT           "When a user clicks the name of a displayed month a pop-up menu appears that lists all months within the year. The user can select a month on the list.",
+                    ID_STATIC,168,40,129,34
+    LTEXT           "If the user clicks the year displayed next to a month name an up-down control appears in place of the year. The user can change the year with this control.",
+                    ID_STATIC,169,76,125,35
+    LTEXT           "The user can return to the current day by clicking the ""Today"" text at the bottom of the control. If the current day is not visible the control updates its display to show it.",
+                    ID_STATIC,170,113,124,42
+    GROUPBOX        "Date Picker control",ID_STATIC,6,167,296,37,BS_FLAT
+    CONTROL         "DateTimePicker",ID_DATETIMEPICKER,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | WS_TABSTOP,36,181,100,13
+    LTEXT           "Click on the arrow button to pop open the Date Picker. Choose a new date  by clicking on it.",
+                    ID_STATIC,156,175,125,26
+    DEFPUSHBUTTON   "Close",ID_BUTTON,251,7,48,16,0,WS_EX_STATICEDGE
+END
+
+;####################################################################################
+

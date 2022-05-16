@@ -1,0 +1,10 @@
+I came up with this example when learning how to use the Windows Registry functions.
+
+This simple example shows you how to Create, Write to and Delete Windows registry keys. The utility enables you to add a new menu option to the Windows "Start" button when you right click on it. This new menu option will also show up in Explorer when you right click in the left directory tree window.
+
+The following Registry functions are used: RegCreateKeyEx, RegOpenKeyEx, RegQueryValueEx, RegSetValue, RegDeleteKey, RegCloseKey.
+
+I've tested it successfully on Windows 95, 98, Me, NT4, 2000 and XP.
+
+
+Regards,

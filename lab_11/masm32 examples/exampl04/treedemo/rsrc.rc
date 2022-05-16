@@ -1,0 +1,21 @@
+#include <\MASM32\INCLUDE\RESOURCE.H>
+
+#define   IDM_EXIT    2001
+
+898                     CURSOR  DISCARDABLE     "SplitV.cur"
+899                     CURSOR  DISCARDABLE     "SplitH.cur"
+900                     BITMAP  DISCARDABLE     "TreeDemo.bmp"
+
+MainMenu  MENU DISCARDABLE
+BEGIN
+   POPUP "&File"
+   BEGIN
+      MENUITEM "E&xit",         IDM_EXIT
+   END
+END
+
+4801 DIALOGEX LOADONCALL MOVEABLE DISCARDABLE 0, 0, 0, 0
+STYLE WS_POPUP | WS_VISIBLE
+FONT 8, "MS Sans Serif"
+BEGIN
+END

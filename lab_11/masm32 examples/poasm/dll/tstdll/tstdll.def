@@ -1,0 +1,3 @@
+LIBRARY tstdll
+EXPORTS
+"_tstproc@4"

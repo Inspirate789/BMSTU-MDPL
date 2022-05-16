@@ -1,0 +1,49 @@
+#include <\MASM32\INCLUDE\RESOURCE.H>
+
+#define   IDB_BITMAPS    301
+#define   IDB_BITMAPL    302
+#define   IDM_MAINMENU   10000
+
+#define   IDM_OPEN       401
+#define   IDM_EXIT       402
+#define   IDM_TEST       403
+#define   IDM_LARGEICON  500 ;LVS_ICON         ; 0
+#define   IDM_SMALLICON  502 ;LVS_SMALLICON    ; 2
+#define   IDM_LIST       503 ;LVS_LIST         ; 3
+#define   IDM_REPORT     501 ;LVS_REPORT       ; 1
+
+#define   IDM_ALIGNLEFT  601 ;LVA_ALIGNLEFT    ; 1
+#define   IDM_ALIGNTOP   602 ;LVA_ALIGNTOP     ; 2
+#define   IDM_DEFAULT    600 ;LVS_DEFAULT      ; 0
+#define   IDM_SNAPTOGRID 605 ;LVS_SNAPTOGRID   ; 5
+
+
+IDB_BITMAPS            BITMAP  DISCARDABLE     "TestS.bmp"
+IDB_BITMAPL            BITMAP  DISCARDABLE     "TestL.bmp"
+
+
+IDM_MAINMENU MENU
+BEGIN
+   POPUP "&File"
+      BEGIN
+         MENUITEM "&Get Directory",    IDM_OPEN
+         MENUITEM SEPARATOR
+         MENUITEM "E&xit",             IDM_EXIT
+      END
+   POPUP "&View"
+      BEGIN
+         MENUITEM  "Lar&ge Icons",     IDM_LARGEICON
+         MENUITEM  "&Small Icons",     IDM_SMALLICON
+         MENUITEM  "&List View",       IDM_LIST
+         MENUITEM  "&Report View",     IDM_REPORT
+      END
+   POPUP "&Arrange"
+      BEGIN
+         MENUITEM  "&Align Left",      IDM_ALIGNLEFT
+         MENUITEM  "&Align Top",       IDM_ALIGNTOP
+         MENUITEM  "&Default",         IDM_DEFAULT
+         MENUITEM  "&Snap To Grid",    IDM_SNAPTOGRID
+      END
+         MENUITEM  "&Test",            IDM_TEST
+END
+

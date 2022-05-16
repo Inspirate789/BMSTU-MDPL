@@ -1,0 +1,37 @@
+// いいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい
+
+#include "\masm32\include\resource.h"
+
+1 24 "manifest.xml"
+
+5 ICON "progress.ico"
+
+// いいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 2, 0, 0, 0
+PRODUCTVERSION 2, 0, 0, 0
+FILEOS 4     // VOS__WINDOWS32
+FILETYPE 1   // VFT_APP
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904B0"
+    BEGIN
+      VALUE "CompanyName",      "The MASM32 SDK\000"
+      VALUE "FileDescription",  "Blank Dialog Template\000"
+      VALUE "FileVersion",      "1.0\000"
+      VALUE "InternalName",     "progress\000"
+      VALUE "OriginalFilename", "progress.exe\000"
+      VALUE "LegalCopyright",   "\251 1998-2011 The MASM32 SDK\000"
+      VALUE "ProductName",      "progress\000"
+      VALUE "ProductVersion",   "1.0\000"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x409, 0x4B0
+  END
+END  
+
+// いいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい

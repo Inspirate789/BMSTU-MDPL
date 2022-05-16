@@ -1,0 +1,7 @@
+I was curious about GDI Paths and dug out my old Programming Windows 95 book by Charles Petzold. This example is loosely based on his example.
+
+Computer aided design applications use paths to create unique clipping regions, draw outlines of irregular shapes and to fill the interiors of irregular shapes.
+
+
+Regards,
+

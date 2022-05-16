@@ -1,0 +1,25 @@
+#include "\masm32\include\resource.h"
+
+500 ICON MOVEABLE PURE LOADONCALL DISCARDABLE "Icon.ico"
+800 BITMAP MOVEABLE PURE LOADONCALL DISCARDABLE "Test.bmp"
+
+; #######################################################################
+
+#define ID_GRIDON 100
+#define ID_GRIDOFF 200
+#define ID_ZOOMIN 300
+#define ID_ZOOMOUT 400
+
+300 MENUEX MOVEABLE IMPURE LOADONCALL DISCARDABLE
+BEGIN
+    POPUP "&Grid Control", , , 0
+    BEGIN
+        MENUITEM "&On",ID_GRIDON
+        MENUITEM "O&ff",ID_GRIDOFF
+        MENUITEM MFT_SEPARATOR
+        MENUITEM "Zoom &In",ID_ZOOMIN
+        MENUITEM "Zoom O&ut",ID_ZOOMOUT
+    END
+END
+
+; #######################################################################

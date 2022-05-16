@@ -1,0 +1,9 @@
+#include "\masm32\include\resource.h"
+
+STRINGTABLE MOVEABLE IMPURE LOADONCALL DISCARDABLE
+BEGIN
+    1500,   "This is a resource string"
+    1501,   "Unicode resource strings in MASM"
+    1502,   "Unicode MessageBox"
+END
+

@@ -1,0 +1,14 @@
+#include "\masm32\include\resource.h"
+
+;###########################################################
+
+500 ICON MOVEABLE PURE LOADONCALL DISCARDABLE "HideDesktop.ico"
+
+;###########################################################
+
+HIDEDIALOG DIALOGEX 0, 0, 0, 0
+STYLE WS_POPUP | WS_VISIBLE | DS_SETFOREGROUND
+BEGIN
+END
+
+;###########################################################

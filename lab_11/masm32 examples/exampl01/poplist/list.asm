@@ -1,0 +1,21 @@
+    item000000 db "Item one",0
+    item000001 db "Item two",0
+    item000002 db "Item three",0
+    item000003 db "Item four",0
+    item000004 db "Item five",0
+    item000005 db "Item six",0
+    item000006 db "Item seven",0
+    item000007 db "Item eight",0
+    item000008 db "Item nine",0
+    item000009 db "Item ten",0
+    item000010 db "Item eleven",0
+    item000011 db "Item twelve",0
+    item000012 db "Item thirteen",0
+    item000013 db "Item fourteen",0
+    item000014 db "Item fifteen",0
+    item000015 db "Item sixteen",0
+    item000016 db "Item seventeen",0
+    item000017 db "Item eighteen",0
+    item000018 db "Item nineteen",0
+    item000019 db "Item twenty",0
+    lastbyte db 0

@@ -1,0 +1,10 @@
+Here is a simple method to grid a bitmap. It uses two memory
+device contexts, one to hold the original bitmap and the other
+as a workspace for holding a copy of the bitmap which the grid
+is painted on. The workspace dc is then copied to the windows dc.
+
+Each grid square equals one bitmap pixel and by changing the
+value "xyZoomFactor" you can zoom the grid demo in or out.
+
+
+Regards,

@@ -1,0 +1,1 @@
+Can't open file 'F:\masm32\examples\exampl01\dll\tstdll.exe'

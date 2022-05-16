@@ -1,0 +1,24 @@
+#include "\masm32\include\resource.h"
+
+#define IDC_TIME 1002
+
+;###########################################################
+
+500 ICON MOVEABLE PURE LOADONCALL DISCARDABLE "PCalendar.ico"
+
+;###########################################################
+
+CALENDARDIALOG DIALOGEX 0, 0, 410, 270
+STYLE DS_CENTER | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Popup Calendar"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Current time is:",IDC_STATIC,164,18,46,9,SS_CENTERIMAGE,
+                    WS_EX_TRANSPARENT
+    CTEXT           "",IDC_TIME,210,18,35,9,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    CONTROL         "MonthCalendar1",IDC_STATIC,"SysMonthCal32",WS_TABSTOP,9,
+                    9,391,252
+    GROUPBOX        "",IDC_STATIC,8,4,394,258,BS_CENTER | BS_FLAT
+END
+
+;###########################################################

@@ -1,0 +1,57 @@
+#include "\masm32\include\resource.h"
+
+;################################################################################
+
+#define  ID_SPIN1 101
+#define  ID_SPIN2 102
+
+#define  ID_SLIDER1 201
+#define  ID_SLIDER2 202
+
+#define  ID_SCROLLBAR1 301
+#define  ID_SCROLLBAR2 302
+
+#define  ID_PROGRESS1 401
+#define  ID_PROGRESS2 402
+
+#define  ID_EDIT1 501
+#define  ID_EDIT2 502
+
+#define  ID_STATIC -1
+
+;################################################################################
+
+CONTROLS DIALOGEX 0, 0, 310, 199
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Fun example using - Scroll Bar, Slider, Up Down, Progress controls"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Slider1",ID_SLIDER1,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_BOTH | WS_TABSTOP,20,158,120,29,WS_EX_DLGMODALFRAME | 
+                    WS_EX_STATICEDGE
+    CONTROL         "Slider2",ID_SLIDER2,"msctls_trackbar32",TBS_VERT | 
+                    TBS_TOP | WS_BORDER | WS_TABSTOP,23,53,27,89,
+                    WS_EX_DLGMODALFRAME | WS_EX_CLIENTEDGE
+    SCROLLBAR       ID_SCROLLBAR1,25,14,108,24
+    SCROLLBAR       ID_SCROLLBAR2,154,18,17,128,SBS_VERT
+    EDITTEXT        ID_EDIT1,93,77,32,38,ES_CENTER | ES_NUMBER | NOT 
+                    WS_BORDER,WS_EX_CLIENTEDGE
+    CONTROL         "Spin1",ID_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,83,77,11,38
+    EDITTEXT        ID_EDIT2,197,67,31,17,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER | NOT WS_BORDER,WS_EX_DLGMODALFRAME | 
+                    WS_EX_CLIENTEDGE
+    CONTROL         "Spin2",ID_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_HORZ,197,84,31,19,
+                    WS_EX_DLGMODALFRAME | WS_EX_CLIENTEDGE
+    CONTROL         "Progress1",ID_PROGRESS1,"msctls_progress32",0x0,168,165,
+                    114,17,WS_EX_DLGMODALFRAME
+    CONTROL         "Progress2",ID_PROGRESS2,"msctls_progress32",
+                    PBS_VERTICAL | PBS_SMOOTH,259,53,27,98,WS_EX_CLIENTEDGE | 
+                    WS_EX_STATICEDGE
+    CTEXT           "Click and drag any Slider or Scroll Bar control or click on the Up-Down control buttons.",
+                    ID_STATIC,191,7,98,28,SS_SUNKEN | WS_BORDER
+END
+
+;####################################################################################
+

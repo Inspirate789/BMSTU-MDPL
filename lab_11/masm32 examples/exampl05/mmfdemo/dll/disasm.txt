@@ -1,0 +1,1 @@
+Can't open file 'd:\masm32\example5\mmfdemo\dll\mmfdll.exe'

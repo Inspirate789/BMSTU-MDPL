@@ -1,0 +1,3 @@
+These later examples which include an XML file and a version control block
+in the resource script were based off a simple template created by the tool
+DLGMAKE.EXE in the masm32 directory.

@@ -1,0 +1,6 @@
+; makefont.lib PROTOTYPES
+; ~~~~~~~~~~~~~~~~~~~~~~~
+
+colrbutn PROTO :DWORD,:DWORD,:DWORD,:DWORD,:DWORD,:DWORD,:DWORD,:DWORD,:DWORD,:DWORD,:DWORD
+MakeFont PROTO :DWORD,:DWORD,:DWORD,:DWORD,:DWORD
+

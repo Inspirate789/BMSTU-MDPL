@@ -1,0 +1,13 @@
+#include <\MASM32\INCLUDE\RESOURCE.H>
+
+#define   IDM_EXIT   2
+
+MainMenu  MENU DISCARDABLE
+
+BEGIN
+    POPUP "&Exit"
+    BEGIN
+         MENUITEM "E&xit",          IDM_EXIT
+    END
+END
+

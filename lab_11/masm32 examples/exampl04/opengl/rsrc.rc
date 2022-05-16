@@ -1,0 +1,9 @@
+600 MENUEX MOVEABLE IMPURE LOADONCALL DISCARDABLE
+BEGIN
+    POPUP "&File", , , 0
+    BEGIN
+        MENUITEM "&Merry krestmess", 1000
+    END
+END
+
+

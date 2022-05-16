@@ -1,0 +1,37 @@
+
+#include "\masm32\include\resource.h"
+
+; ##############################################################################
+
+#define ID_EDIT1 101
+#define ID_EDIT2 102
+
+#define ID_BUTTON1 201
+#define ID_BUTTON2 202
+#define ID_BUTTON3 203
+
+#define ID_STATIC -1
+
+; ##############################################################################
+
+APPENDER DIALOGEX 0, 0, 191, 197
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Simple Registry Key example."
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Enter a menu option name here.",ID_STATIC,20,14,101,8
+    EDITTEXT        ID_EDIT1,18,24,154,10,ES_AUTOHSCROLL | NOT WS_BORDER
+    LTEXT           "Example: &&Regedit",ID_STATIC,20,35,79,8
+    LTEXT           "Enter the program full path name here.",ID_STATIC,20,53,136,8
+    EDITTEXT        ID_EDIT2,18,63,154,10,ES_AUTOHSCROLL | NOT WS_BORDER
+    LTEXT           "Example: c:\\windows\\regedit.exe",ID_STATIC,20,74,109,8
+    LTEXT           "Example: c:\\winnt\\regedit.exe",ID_STATIC,20,82,109,8
+    CTEXT           "Once you have entered the proper info click on the ""Append"" button then right click on Windows ""Start"" button to access your new menu option. Your new menu option will also appear in Explorer when you right click in the left pane.",
+                    ID_STATIC,30,100,131,51,WS_BORDER
+    PUSHBUTTON      "Append",ID_BUTTON1,14,163,53,17,BS_FLAT,WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "Remove",ID_BUTTON2,68,163,53,17,BS_FLAT,WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "Quit",ID_BUTTON3,122,163,53,17,BS_FLAT,WS_EX_DLGMODALFRAME
+    GROUPBOX        "",ID_STATIC,5,2,180,185,BS_CENTER | BS_FLAT
+END
+
+; ##############################################################################

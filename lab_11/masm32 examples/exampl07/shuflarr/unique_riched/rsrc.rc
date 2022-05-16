@@ -1,0 +1,61 @@
+#include "\masm32\include\resource.h"
+
+500 ICON MOVEABLE PURE LOADONCALL DISCARDABLE "MAINICON.ICO"
+
+2000 BITMAP MOVEABLE PURE LOADONCALL DISCARDABLE "FILE2000.BMP"
+
+600	MENUEX MOVEABLE IMPURE LOADONCALL DISCARDABLE
+BEGIN
+    POPUP "&File", , , 0
+    BEGIN
+        MENUITEM "&New\tCtrl+N", 1000
+        MENUITEM "", , 0x0800 /*MFT_SEPARATOR*/
+        MENUITEM "New &Instance\tCtrl+W", 1001
+        MENUITEM "", , 0x0800 /*MFT_SEPARATOR*/
+        MENUITEM "&Open\tCtrl+O", 1002
+        MENUITEM "", , 0x0800 /*MFT_SEPARATOR*/
+        MENUITEM "&Save\tCtrl+S", 1003
+        MENUITEM "Save &As\tCtrl+B", 1004
+        MENUITEM "", , 0x0800 /*MFT_SEPARATOR*/
+        MENUITEM "Merge &File\tCtrl+F", 1005
+        MENUITEM "", , 0x0800 /*MFT_SEPARATOR*/
+        MENUITEM "&Exit\tEsc", 1010
+    END
+    POPUP "&Edit",,,0
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z", 1100
+        MENUITEM "", , 0x0800 /*MFT_SEPARATOR*/
+        MENUITEM "&Cut\tCtrl+X", 1101
+        MENUITEM "C&opy\tCtrl+C", 1102
+        MENUITEM "&Paste\tCtrl+V", 1103
+        MENUITEM "", , 0x0800 /*MFT_SEPARATOR*/
+        MENUITEM "&Del\tDel", 1104
+        MENUITEM "", , 0x0800 /*MFT_SEPARATOR*/
+        MENUITEM "&Toggle Selection Bar\tCtrl+T", 1105
+        MENUITEM "", , 0x0800 /*MFT_SEPARATOR*/
+        MENUITEM "&Find Text\tF2", 1106
+        MENUITEM "Find &Next\tF3", 1107
+        MENUITEM "", , 0x0800 /*MFT_SEPARATOR*/
+        MENUITEM "&Select All\tCtrl+A", 1108
+
+
+    END
+    POPUP "&Help", , , 0
+    BEGIN
+        MENUITEM "&About", 1900
+    END
+END
+
+300 DIALOGEX MOVEABLE IMPURE LOADONCALL DISCARDABLE	10, 10, 259, 50, 0
+STYLE DS_LOCALEDIT | DS_MODALFRAME | 0x0004 | DS_CENTER | WS_CAPTION | WS_SYSMENU | WS_VISIBLE | WS_POPUP
+CAPTION "Find"
+FONT 8, "MS Sans Serif", 700, 0 /*FALSE*/
+BEGIN
+    EDITTEXT        3092, 	9,13,190,13, ES_AUTOHSCROLL | ES_LEFT, , 0
+    PUSHBUTTON      "&Find", 3090, 	210,6,41,13, 0, , 0
+    PUSHBUTTON      "&Cancel", 3091, 	210,22,41,13, 0, , 0
+    CTEXT           "Press F3 to find next", 65535, 	12,2,182,10, SS_LEFT, , 0
+    CONTROL         "Case Sensitive", 3093, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 	21,34,62,8, , 0
+    CONTROL         "Match Whole Word", 3094, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 	115,34,77,8, , 0
+END
+

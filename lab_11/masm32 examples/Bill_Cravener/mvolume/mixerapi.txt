@@ -1,0 +1,19 @@
+Here is an example of using Windows mixer API's. This example enables
+you to easily add a master volume control to your program. There are
+two examples on how to use the DLL and LIB files. The minimum value you
+can send to the mixer is "0" the maximum is "65535", "0" being no sound
+and "65535" being maximum volume.
+
+I have tested these examples on a variety of different machines running
+Windows 95, 98, Me, 2000 and XP. Of course you must have a sound card
+installed on you computer for this master volume example to work. 
+
+Windows mixer API's give you a way to make adjustments to the settings
+of most any sound card without needing to be specifically written for that
+card. Just like with other devices in order to use a mixer device you must
+first open it with mixerOpen and then you may call other mixer API's to
+control the sound card's input and output lines. When finished you must
+close the device with mixerClose.
+
+
+Regards,

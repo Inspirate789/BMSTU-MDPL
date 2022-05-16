@@ -1,0 +1,210 @@
+mmfdll.dll                         (hex)           (dec)
+
+.EXE size (bytes)                    490            1168
+Minimum load size (bytes)            450            1104
+Overlay number                         0               0
+Initial CS:IP                  0000:0000
+Initial SS:SP                  0000:00B8             184
+Minimum allocation (para)              0               0
+Maximum allocation (para)           FFFF           65535
+Header size (para)                     4               4
+Relocation table offset               40              64
+Relocation entries                     0               0
+
+Portable Executable starts at                 c8
+Signature                               00004550 (PE)
+Machine                                     014C (Intel 386)
+Sections                                    0004
+Time Date Stamp                         3C63E9EB Sat Feb  9 01:08:27 2002
+Symbol Table                            00000000
+Number of Symbols                       00000000
+Optional header size                        00E0
+Characteristics                             210E
+	Executable Image
+	Line numbers stripped
+	Local symbols stripped
+	32 bit word machine
+	DLL
+Magic                                       010B
+Linker Version                              5.12
+Size of Code                            00000200
+Size of Initialized Data                00000600
+Size of Uninitialized Data              00000000
+Address of Entry Point                  00001000
+Base of Code                            00001000
+Base of Data                            00002000
+Image Base                              10000000
+Section Alignment                       00001000
+File Alignment                          00000200
+Operating System Version                    4.00
+Image Version                               0.00
+Subsystem Version                           4.00
+reserved                                00000000
+Image Size                              00005000
+Header Size                             00000400
+Checksum                                00000000
+Subsystem                                   0002 (Windows)
+DLL Characteristics                         0000
+Size Of Stack Reserve                   00100000
+Size Of Stack Commit                    00001000
+Size Of Heap Reserve                    00100000
+Size Of Heap Commit                     00001000
+Loader Flags                            00000000
+Number of Directories                   00000010
+
+Directory Name                          VirtAddr  VirtSize
+--------------------------------------  --------  --------
+Export                                  000020F0  00000047
+Import                                  0000201C  0000003C
+Resource                                00000000  00000000
+Exception                               00000000  00000000
+Security                                00000000  00000000
+Base Relocation                         00004000  00000024
+Debug                                   00000000  00000000
+Decription/Architecture                 00000000  00000000
+Machine Value (MIPS GP)                 00000000  00000000
+Thread Storage                          00000000  00000000
+Load Configuration                      00000000  00000000
+Bound Import                            00000000  00000000
+Import Address Table                    00002000  0000001C
+Delay Import                            00000000  00000000
+COM Runtime Descriptor                  00000000  00000000
+(reserved)                              00000000  00000000
+
+Section Table
+-------------
+01  .text   	Virtual Address         00001000
+		Virtual Size            000000B0
+		Raw Data Offset         00000400
+		Raw Data Size           00000200
+		Relocation Offset       00000000
+		Relocation Count        0000
+		Line Number Offset      00000000
+		Line Number Count       0000
+		Characteristics         60000020
+			Code
+			Executable
+			Readable
+
+02  .rdata  	Virtual Address         00002000
+		Virtual Size            00000137
+		Raw Data Offset         00000600
+		Raw Data Size           00000200
+		Relocation Offset       00000000
+		Relocation Count        0000
+		Line Number Offset      00000000
+		Line Number Count       0000
+		Characteristics         40000040
+			Initialized Data
+			Readable
+
+03  .data   	Virtual Address         00003000
+		Virtual Size            00000018
+		Raw Data Offset         00000800
+		Raw Data Size           00000200
+		Relocation Offset       00000000
+		Relocation Count        0000
+		Line Number Offset      00000000
+		Line Number Count       0000
+		Characteristics         C0000040
+			Initialized Data
+			Readable
+			Writeable
+
+04  .reloc  	Virtual Address         00004000
+		Virtual Size            0000003A
+		Raw Data Offset         00000A00
+		Raw Data Size           00000200
+		Relocation Offset       00000000
+		Relocation Count        0000
+		Line Number Offset      00000000
+		Line Number Count       0000
+		Characteristics         42000040
+			Initialized Data
+			Discardable
+			Readable
+
+
+ Exp Addr Hint   Ord Export Name by mmfdll.dll - Sat Feb  9 01:08:26 2002
+ -------- ---- ----- ---------------------------------------------------------
+ 00001068    0     1 function1
+
+
+ Imp Addr Hint Import Name from USER32.dll - Not Bound
+ -------- ---- ---------------------------------------------------------------
+ 00002014  1BB MessageBoxA
+
+ Imp Addr Hint Import Name from KERNEL32.dll - Not Bound
+ -------- ---- ---------------------------------------------------------------
+ 00002000  28B UnmapViewOfFile
+ 00002004   19 CloseHandle
+ 00002008   33 CreateFileMappingA
+ 0000200C  1BD MapViewOfFile
+
+
+IAT Entry
+
+ 00000000: 000020C2 0000208E - 0000209C 000020B2 - 00000000 00002074 
+ 00000018: 00000000 
+
+Disassembly
+
+10001000                    start:
+10001000 55                     push    ebp
+10001001 8BEC                   mov     ebp,esp
+10001003 837D0C01               cmp     dword ptr [ebp+0Ch],1
+10001007 753F                   jnz     loc_10001048
+10001009 6800300010             push    offset 10003000h
+1000100E 6840420F00             push    0F4240h
+10001013 6A00                   push    0
+10001015 6A04                   push    4
+10001017 6A00                   push    0
+10001019 6AFF                   push    0FFFFFFFFh
+1000101B E87E000000             call    fn_1000109E
+10001020 A310300010             mov     [10003010h],eax
+10001025 6A00                   push    0
+10001027 6A00                   push    0
+10001029 6A00                   push    0
+1000102B 6A02                   push    2
+1000102D FF3510300010           push    dword ptr [10003010h]
+10001033 E86C000000             call    fn_100010A4
+10001038 A314300010             mov     [10003014h],eax
+1000103D B801000000             mov     eax,1
+10001042 C9                     leave
+10001043 C20C00                 ret     0Ch
+10001046 EB1C                   jmp     loc_10001064
+10001048                    loc_10001048:
+10001048 837D0C00               cmp     dword ptr [ebp+0Ch],0
+1000104C 7516                   jnz     loc_10001064
+1000104E FF3514300010           push    dword ptr [10003014h]
+10001054 E851000000             call    fn_100010AA
+10001059 FF3510300010           push    dword ptr [10003010h]
+1000105F E834000000             call    fn_10001098
+10001064                    loc_10001064:
+10001064 C9                     leave
+10001065 C20C00                 ret     0Ch
+10001068                    function1:
+10001068 A114300010             mov     eax,[10003014h]
+1000106D 0500040000             add     eax,400h
+10001072 8B4804                 mov     ecx,[eax+4]
+10001075 030D14300010           add     ecx,[10003014h]
+1000107B 8B5008                 mov     edx,[eax+8]
+1000107E 031514300010           add     edx,[10003014h]
+10001084 FF700C                 push    dword ptr [eax+0Ch]
+10001087 52                     push    edx
+10001088 51                     push    ecx
+10001089 FF30                   push    dword ptr [eax]
+1000108B E802000000             call    fn_10001092
+10001090 C3                     ret
+10001091 CC                     int     3
+10001092                    fn_10001092:
+10001092 FF2514200010           jmp     dword ptr [MessageBoxA]
+10001098                    fn_10001098:
+10001098 FF2504200010           jmp     dword ptr [CloseHandle]
+1000109E                    fn_1000109E:
+1000109E FF2508200010           jmp     dword ptr [CreateFileMappingA]
+100010A4                    fn_100010A4:
+100010A4 FF250C200010           jmp     dword ptr [MapViewOfFile]
+100010AA                    fn_100010AA:
+100010AA FF2500200010           jmp     dword ptr [UnmapViewOfFile]
+

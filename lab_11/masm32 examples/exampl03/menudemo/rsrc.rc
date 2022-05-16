@@ -1,0 +1,79 @@
+#include <\MASM32\INCLUDE\RESOURCE.H>
+
+#define   IDM_NEW     1001
+#define   IDM_OPEN    1002
+#define   IDM_SAVE    1003
+#define   IDM_EXIT    2001
+#define   IDM_CUT     1005
+#define   IDM_COPY    1006
+#define   IDM_PASTE   1007
+#define   IDM_DEL     1008
+#define   IDM_SET1    1101
+#define   IDM_SET2    1102
+#define   IDM_SET3    1103
+#define   IDM_SET4    1104
+#define   IDM_SET5    1105
+#define   IDM_SET6    1106
+#define   IDM_SET7    1107
+#define   IDM_SET8    1108
+#define   IDM_SET9    1109
+#define   IDM_SET10   1110
+#define   IDM_SET11   1111
+
+701             BITMAP  DISCARDABLE     "B05_Cut.bmp"
+702             BITMAP  DISCARDABLE     "B06_Copy.bmp"
+703             BITMAP  DISCARDABLE     "B07_Paste.bmp"
+704             BITMAP  DISCARDABLE     "B08_Delete.bmp"
+705             BITMAP  DISCARDABLE     "B05_Cut4.bmp"
+706             BITMAP  DISCARDABLE     "B06_Copy4.bmp"
+707             BITMAP  DISCARDABLE     "B07_Paste4.bmp"
+708             BITMAP  DISCARDABLE     "B08_Delete4.bmp"
+
+MainMenu  MENU DISCARDABLE
+BEGIN
+   POPUP "&File"
+   BEGIN
+      MENUITEM "&New",          IDM_NEW
+      MENUITEM "&Open",         IDM_OPEN
+      MENUITEM "&Save",         IDM_SAVE
+      MENUITEM SEPARATOR
+      MENUITEM "E&xit",         IDM_EXIT
+   END
+   POPUP "&Edit"
+   BEGIN
+      MENUITEM "Cu&t",          IDM_CUT
+      MENUITEM "&Copy",         IDM_COPY
+      MENUITEM "&Paste",        IDM_PASTE
+      MENUITEM "&Delete",       IDM_DEL
+   END
+   POPUP "&Menu Functions"
+   BEGIN
+      MENUITEM "Change the name of &Save in the &File Menu",        IDM_SET1
+      MENUITEM "Insert a Save As Menu Item in the &File Menu",      IDM_SET2
+      MENUITEM SEPARATOR
+      MENUITEM "Insert a &New Menu in the Menu bar",                IDM_SET3
+      MENUITEM "Insert a Menu Item in the &New Menu",               IDM_SET4
+      MENUITEM "Insert a Sep and Menu Item in the &New Menu",       IDM_SET5
+      MENUITEM SEPARATOR
+      MENUITEM "Add Bitmaps to the &Edit Menu  (Ugly)",             IDM_SET6
+      MENUITEM SEPARATOR
+      MENUITEM "Insert a &New Menu and Submenu in the Menu bar",    IDM_SET7
+      MENUITEM "Change the new Submenu to OwnerDrawn  (Nice)",      IDM_SET8
+      MENUITEM SEPARATOR
+      MENUITEM "Gray or Enable &Copy in the &Edit Menu",            IDM_SET9
+      MENUITEM "Gray or Enable &Copy in the OwnerDrawn &Edit Menu", IDM_SET10
+      MENUITEM SEPARATOR
+      MENUITEM "Restore the Menu bar",                              IDM_SET11
+   END
+END
+
+700 MENU DISCARDABLE
+BEGIN
+   POPUP "&Edit"
+   BEGIN
+      MENUITEM "Cu&t",          IDM_CUT
+      MENUITEM "&Copy",         IDM_COPY
+      MENUITEM "&Paste",        IDM_PASTE
+      MENUITEM "&Delete",       IDM_DEL
+   END
+END

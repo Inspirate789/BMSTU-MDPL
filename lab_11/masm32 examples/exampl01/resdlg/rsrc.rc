@@ -1,0 +1,21 @@
+#include "\masm32\include\resource.h"
+
+
+TESTWIN DIALOGEX MOVEABLE IMPURE LOADONCALL DISCARDABLE	10, 10, 205, 122, 0
+STYLE DS_MODALFRAME | 0x0004 | DS_CENTER | WS_CAPTION | WS_SYSMENU | WS_VISIBLE | WS_POPUP
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif", 700, 0 /*FALSE*/
+BEGIN
+    EDITTEXT        100, 	67,8,71,14, ES_AUTOHSCROLL | ES_LEFT, , 0
+    EDITTEXT        101, 	67,28,71,12, ES_AUTOHSCROLL | ES_LEFT, , 0
+    EDITTEXT        102, 	67,47,71,13, ES_AUTOHSCROLL | ES_LEFT, , 0
+    EDITTEXT        103, 	67,80,71,13, ES_AUTOHSCROLL | ES_LEFT, , 0
+    PUSHBUTTON      "Calculate", 1000, 	66,98,35,16, 0, , 0
+    PUSHBUTTON      "Clear", 1001, 	105,98,35,16, 0, , 0
+    CTEXT           "Input 1", 20, 	11,10,43,10, SS_LEFT, , 0
+    CTEXT           "Input 2", 30, 	11,29,43,10, SS_LEFT, , 0
+    CTEXT           "Input 3", 40, 	11,48,43,10, SS_LEFT, , 0
+    CTEXT           "Equals",  50, 	13,81,43,9, SS_LEFT, , 0
+END
+
+

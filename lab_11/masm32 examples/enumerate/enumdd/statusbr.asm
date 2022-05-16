@@ -1,0 +1,34 @@
+; ##########################################################################
+
+    Do_Status PROTO :DWORD
+
+    .data
+        hStatus       dd 0
+
+    .code
+
+; ##########################################################################
+
+Do_Status proc hParent:DWORD
+
+    LOCAL sbParts[ 4] :DWORD
+
+    invoke CreateStatusWindow,WS_CHILD or WS_VISIBLE or \
+                              SBS_SIZEGRIP,NULL, hParent, 200
+    mov hStatus, eax
+      
+  ; -------------------------------------
+  ; sbParts is a DWORD array of 4 members
+  ; -------------------------------------
+    mov [sbParts +  0], 120
+    mov [sbParts +  4], 240
+    mov [sbParts +  8], 360
+    mov [sbParts + 12], -1
+
+    invoke SendMessage,hStatus,SB_SETPARTS, 4,ADDR sbParts
+
+    ret
+
+Do_Status endp
+
+; ##########################################################################

@@ -1,0 +1,38 @@
+#include "\masm32\include\resource.h"
+
+;################################################################################
+
+#define  IDC_EXIT 100
+#define  IDC_BUTTON1 101
+#define  IDC_BUTTON2 102
+#define  IDC_BUTTON3 103
+#define  IDC_BUTTON4 104
+#define  IDC_BUTTON5 105
+#define  IDC_BUTTON6 106
+#define  IDC_BUTTON7 107
+#define  IDC_BUTTON8 108
+#define  IDC_STATIC -1
+
+;################################################################################
+
+COMMONDIALOGS DIALOG DISCARDABLE  0, 0, 287, 180
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Common Dialog Box Example"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Colors Dialog",IDC_BUTTON1,14,17,121,14
+    PUSHBUTTON      "Font Dialog",IDC_BUTTON2,14,36,121,14
+    PUSHBUTTON      "File Open Dialog",IDC_BUTTON3,14,55,121,14
+    PUSHBUTTON      "File Save Dialog",IDC_BUTTON4,14,74,121,14
+    PUSHBUTTON      "Print Dialog",IDC_BUTTON5,14,92,121,14
+    PUSHBUTTON      "Page Setup Dialog",IDC_BUTTON6,14,112,121,14
+    PUSHBUTTON      "Find Text Dialog",IDC_BUTTON7,14,131,121,14
+    PUSHBUTTON      "Find Replace Dialog",IDC_BUTTON8,14,150,121,14
+    PUSHBUTTON      "EXIT",IDC_EXIT,224,146,50,24
+    GROUPBOX        "",IDC_STATIC,148,16,127,83
+    LTEXT           "The Common Dialogs are a set of dialog boxes for performing common application tasks such as opening files, choosing color values, and printing documents. The common dialogs allow you to implement a consistent approach to your application user interface.",
+                    IDC_STATIC,156,26,115,68
+END
+
+;####################################################################################
+

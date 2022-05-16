@@ -1,0 +1,24 @@
+Here is how you can provide help about a control in a dialog box
+with the [?] question mark titlebar button. To show the question
+mark titlebar button create your dialog with the WS_EX_CONTEXTHELP
+style.
+
+You can provide pop-up help in a dialog box by creating an array
+consisting of pairs of DWORD's. The first value in each pair is
+the identifier of the control. The second value is the context
+identifier you give the topic in the help file about the control.
+The array must end with a pair of zero's.
+
+The dialog box procedure must process the WM_HELP messages. The
+lParam parameter of WM_HELP contains the address of a HELPINFO
+structure. The hItemHandle member of this structure identifies the
+control for which the user has requested Help. You must pass this
+handle to the WinHelp function along with the HELP_WM_HELP command
+the name of your Help file and a pointer to the array of identifiers.
+
+The WinHelp function will search the array for the control identifier
+of the specified control and then retrieve the corresponding Help
+identifier. Next the function passes the Help context identifier to
+Windows Help which finds the corresponding topic and displays it in
+a pop-up window next to the control.
+

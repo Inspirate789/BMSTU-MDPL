@@ -1,0 +1,75 @@
+// いいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい
+
+#include "\masm32\INCLUDE\Resource.h"
+
+// いいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい
+
+1 24 "template.xml"    // manifest file
+
+500 ICON MOVEABLE PURE LOADONCALL DISCARDABLE "template.ico"
+700 BITMAP MOVEABLE PURE LOADONCALL DISCARDABLE "toolbar.bmp"
+800 BITMAP MOVEABLE PURE LOADONCALL DISCARDABLE "bluegrad.bmp"
+
+// いいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい
+
+600	MENUEX MOVEABLE IMPURE LOADONCALL DISCARDABLE
+BEGIN
+    POPUP "&File", , , 0
+    BEGIN
+        MENUITEM "&Open", 1010
+        MENUITEM "", , 0x0800 /*MFT_SEPARATOR*/
+        MENUITEM "&Save", 1020
+        MENUITEM "", , 0x0800 /*MFT_SEPARATOR*/
+        MENUITEM "&Exit", 1090
+    END
+    POPUP "&Help", , , 0
+    BEGIN
+        MENUITEM "&About", 10000
+    END
+END
+
+// いいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい
+
+5000 DIALOGEX MOVEABLE IMPURE LOADONCALL DISCARDABLE	10, 10, 257, 133, 0
+STYLE DS_MODALFRAME | 0x0004 | DS_CENTER | WS_CAPTION | WS_VISIBLE | WS_POPUP
+CAPTION " About"
+FONT 8, "MS Sans Serif", 700, 0 /*FALSE*/
+BEGIN
+    LTEXT           "img", 999, 0,0,12,10, SS_LEFT, , 0
+    ICON            500, 998 15,35,18,20, , 0
+    LTEXT           "Text", 997, 51,37,190,60, SS_LEFT, , 0
+    PUSHBUTTON      "OK", 1, 189,104,50,14, 0, , 0
+END
+
+
+
+// いいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 1, 0, 0, 0
+PRODUCTVERSION 1, 0, 0, 0
+FILEOS VOS__WINDOWS32
+FILETYPE VFT_APP
+// FILETYPE VFT_DLL
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904B0"
+    BEGIN
+      VALUE "CompanyName",      "Your Company Name\000"
+      VALUE "FileDescription",  "Description Of Application\000"
+      VALUE "FileVersion",      "1.0\000"
+      VALUE "InternalName",     "Item Name\000"
+      VALUE "OriginalFilename", "Original File\000"
+      VALUE "LegalCopyright",   "\251 2010-2020 Application Copyright Holder\000"
+      VALUE "ProductName",      "Item Name\000"
+      VALUE "ProductVersion",   "1.0\000"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x409, 0x4B0
+  END
+END
+
+// いいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい

@@ -1,0 +1,2 @@
+LIBRARY tstdll
+EXPORTS TestProc

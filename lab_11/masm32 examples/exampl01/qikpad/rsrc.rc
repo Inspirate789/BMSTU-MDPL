@@ -1,0 +1,35 @@
+#include "\masm32\include\resource.h"
+
+500 ICON MOVEABLE PURE LOADONCALL DISCARDABLE "MAINICON.ICO"
+
+750 BITMAP MOVEABLE PURE LOADONCALL DISCARDABLE "TOOLBAR.BMP"
+
+600	MENUEX MOVEABLE IMPURE LOADONCALL DISCARDABLE
+BEGIN
+    POPUP "&File", , , 0
+    BEGIN
+        MENUITEM "&New",  1000
+        MENUITEM "&Open", 1001
+        MENUITEM "", , 0x0800 /*MFT_SEPARATOR*/
+        MENUITEM "&Save", 1002
+        MENUITEM "Save &As", 1003
+        MENUITEM "", , 0x0800 /*MFT_SEPARATOR*/
+        MENUITEM "&Exit", 1010
+    END
+    POPUP "&Edit",,,0
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",1100
+        MENUITEM "", , 0x0800 /*MFT_SEPARATOR*/
+        MENUITEM "&Cut\tCtrl+X",1101
+        MENUITEM "C&opy\tCtrl+C",1102
+        MENUITEM "&Paste\tCtrl+V",1103
+        MENUITEM "", , 0x0800 /*MFT_SEPARATOR*/
+        MENUITEM "&Delete\tDelete",1104
+        MENUITEM "", , 0x0800 /*MFT_SEPARATOR*/
+        MENUITEM "&Wordwrap\tF9", 1105
+    END
+    POPUP "&Help", , , 0
+    BEGIN
+        MENUITEM "&About", 1900
+    END
+END

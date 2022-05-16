@@ -1,0 +1,28 @@
+#include "\masm32\include\resource.h"
+
+500 ICON MOVEABLE PURE LOADONCALL DISCARDABLE "MAINICON.ICO"
+
+600	MENUEX MOVEABLE IMPURE LOADONCALL DISCARDABLE
+BEGIN
+    POPUP "&File", , , 0
+    BEGIN
+        MENUITEM "&Open", 1000
+        MENUITEM "", , 0x0800 /*MFT_SEPARATOR*/
+        MENUITEM "&Save", 1001
+        MENUITEM "", , 0x0800 /*MFT_SEPARATOR*/
+        MENUITEM "&Exit", 1010
+    END
+    POPUP "&Window", , , 0
+    BEGIN
+        MENUITEM "&Tile", 1800
+        MENUITEM "&Cascade", 1801
+        MENUITEM "&Arrange Icons", 1802
+        MENUITEM "&Next Window\tF6", 1803
+        MENUITEM "C&lose All", 1804
+    END
+    POPUP "&Help", , , 0
+    BEGIN
+        MENUITEM "&About", 1900
+    END
+END
+
