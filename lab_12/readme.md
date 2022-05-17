@@ -19,36 +19,35 @@
 6. Нажимаем "Yes":<br>
 ![image](https://user-images.githubusercontent.com/84042050/168800877-5ee2b647-daed-409a-ba30-3498cbabfd76.png)
 
-Нажимаем ПКМ, "Text view":<br>
+7. Нажимаем ПКМ, "Text view":<br>
 ![image](https://user-images.githubusercontent.com/84042050/168804613-3356cce0-d649-4bff-97b8-e9a6c0e7db78.png)
 
-Ставим точку останова перед вызовом `strcmp` на моменте, где в стек кладутся аргументы функции (первый - то, что мы ввели, второй - пароль):<br> 
+8. Ставим точку останова перед вызовом `strcmp` на моменте, где в стек кладутся аргументы функции (первый - то, что мы ввели, второй - пароль):<br> 
 ![image](https://user-images.githubusercontent.com/84042050/168804809-b400632d-90e3-4709-9f67-8742ffe60585.png)
 
-7. Запускаем приложение:<br>
+9. Запускаем приложение:<br>
 ![image](https://user-images.githubusercontent.com/84042050/168805271-39831080-fe24-45c3-a649-01c9917486c4.png)
 Нас просят ввести пароль, который мы пока не знаем. Сейчас будем его узнавать.
 
-8. Нажимаем ПКМ, "Text view":<br>
+10. Нажимаем ПКМ, "Text view":<br>
 ![image](https://user-images.githubusercontent.com/84042050/168803279-0de1477e-1a04-4a22-be4a-84e56dcd6044.png)
 
-9. 
+11. 
 ![image](https://user-images.githubusercontent.com/84042050/168803468-8c1822c8-abda-479d-839f-887734ffe9fd.png)
 
-10.
+12.
 ![image](https://user-images.githubusercontent.com/84042050/168805415-587e61fb-f0c1-49fa-8f92-6b0e77cdce91.png)
 
-11.
+13.
 ![image](https://user-images.githubusercontent.com/84042050/168805522-2689d211-c274-4529-b178-3bb91fde6969.png)
 
-12.
+14.
 ![image](https://user-images.githubusercontent.com/84042050/168805575-89f52745-6982-41ff-8d1a-279c2918d235.png)
 
-13.
+15.
 ![image](https://user-images.githubusercontent.com/84042050/168805725-2e3fc162-6422-488d-8376-474d3274c9ac.png)
 
-14.
+16. Видим искомый пароль.
 ![image](https://user-images.githubusercontent.com/84042050/168805763-bbd40191-083b-417b-8649-e3aee89003dc.png)
-
-![image](https://user-images.githubusercontent.com/84042050/168805922-ac780aea-6d86-4a7c-b24e-226f97f3f440.png)
+Осталось только убедиться в том, что этот пароль подходит.
 
