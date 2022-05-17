@@ -3,7 +3,7 @@
 
 ## Пароль: password123
 
-## Как взломать:
+## Как взломать (GUIDE IN PROGRESS):
 1. Качаем дебаггер IDA с [их официального гитхаба](https://github.com/AngelKitty/IDA7.0);
 
 2. Запускаем;
