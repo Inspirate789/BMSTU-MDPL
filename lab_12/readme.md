@@ -27,19 +27,22 @@
 
 9. Запускаем приложение:<br>
 ![image](https://user-images.githubusercontent.com/84042050/168805271-39831080-fe24-45c3-a649-01c9917486c4.png)
+![image](https://user-images.githubusercontent.com/84042050/168805415-587e61fb-f0c1-49fa-8f92-6b0e77cdce91.png)
 Нас просят ввести пароль, который мы пока не знаем. Сейчас будем его узнавать.
 
+10. Вводим что-нибудь и нажимаем Enter:
+![image](https://user-images.githubusercontent.com/84042050/168805522-2689d211-c274-4529-b178-3bb91fde6969.png)
+<!-- 
 10. Нажимаем ПКМ, "Text view":<br>
 ![image](https://user-images.githubusercontent.com/84042050/168803279-0de1477e-1a04-4a22-be4a-84e56dcd6044.png)
 
 11. 
 ![image](https://user-images.githubusercontent.com/84042050/168803468-8c1822c8-abda-479d-839f-887734ffe9fd.png)
 
-12.
-![image](https://user-images.githubusercontent.com/84042050/168805415-587e61fb-f0c1-49fa-8f92-6b0e77cdce91.png)
+12. -->
 
-13.
-![image](https://user-images.githubusercontent.com/84042050/168805522-2689d211-c274-4529-b178-3bb91fde6969.png)
+
+
 
 14.
 ![image](https://user-images.githubusercontent.com/84042050/168805575-89f52745-6982-41ff-8d1a-279c2918d235.png)
