@@ -2,6 +2,7 @@
 С помощью x64dbg, IDA Freeware или других дизассемблеров/отладчиков определить пароль, необходимый для получения сообщения "congrats you cracked the password" в прикреплённой программе (https://crackmes.one/crackme/5fe8258333c5d4264e590114)
 
 ## Пароль: password123
+Спасибо [Серёге](https://github.com/seregadanser) за помощь со взломом.
 
 ## Как взломать (GUIDE IN PROGRESS):
 1. Качаем дебаггер IDA с [их официального гитхаба](https://github.com/AngelKitty/IDA7.0);
